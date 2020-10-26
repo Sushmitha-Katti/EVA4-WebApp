@@ -7,3 +7,7 @@ export const FACE_RECOGNISATION_ENDPOINT  = `https://jmvoc20u45.execute-api.ap-s
 export const GAN_ENDPOINT = `https://zedptp9pc4.execute-api.ap-south-1.amazonaws.com/dev/gan`
 export const HUMAN_POSE_ESTIMATION_ENDPOINT = `https://n169bzmk01.execute-api.ap-south-1.amazonaws.com/dev/human_pose_estimation`
 export const FACE_SWAP_ENDPOINT  = `https://7odoljgr3c.execute-api.ap-south-1.amazonaws.com/dev/face_swap`
+
+export const VAE_ENDPOINT = `https://kbi2lovxpa.execute-api.ap-south-1.amazonaws.com/dev/vae`
+export const SRGAN_ENDPOINT = `https://w4hakr90u4.execute-api.ap-south-1.amazonaws.com/dev/srgan`
+export const SENTIMENTAL_ANALYSIS_ENDPOINT = `https://pw8h99ofch.execute-api.ap-south-1.amazonaws.com/dev/sentiment_analysis`

@@ -1,12 +1,16 @@
 import React from 'react'
 import Link from 'next/link'
 import styled from 'styled-components'
-const CLASSIFICATION = './classify'
-const FACE_ALIGN = './face_align'
-const FACE_RECOGNISATION = './face_recognisation'
-const GAN = './gan'
-const HUMAN_POSE_ESTIMATION = './hpe'
-const FACE_SWAP = './face_swap'
+
+const CLASSIFICATION = './classify.html'
+const FACE_ALIGN = './face_align.html'
+const FACE_RECOGNISATION = './face_recognisation.html'
+const GAN = './gan.html'
+const HUMAN_POSE_ESTIMATION = './hpe.html'
+const FACE_SWAP = './face_swap.html'
+const VAE = './vae.html'
+const SRGAN = './srgan.html'
+const SENTI = './sentimenatal_analysis.html'
 
 import {
   Navbar,
@@ -40,7 +44,7 @@ const CustomNavbar = (props) => (
 <NavWrapper>
 
 <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark" expand="lg" className ='navbar' sticky="top" >
-  <Navbar.Brand href="/">SVGS</Navbar.Brand>
+  <Navbar.Brand href="./index.html">SVGS</Navbar.Brand>
   <Navbar.Toggle aria-controls="responsive-navbar-nav" />
   <Navbar.Collapse id="responsive-navbar-nav">
     <Nav className="mr-auto nav-elements ">
@@ -53,6 +57,9 @@ const CustomNavbar = (props) => (
       </NavDropdown>
       <Nav.Link href={HUMAN_POSE_ESTIMATION} active = {props.active == 'hpe'? true: false}>HPE</Nav.Link>
       <Nav.Link href={GAN} active = {props.active == 'gan'? true: false}>GAN</Nav.Link>
+      <Nav.Link href={VAE} active = {props.active == 'vae'? true: false}>VAE</Nav.Link>
+      <Nav.Link href={SRGAN} active = {props.active == 'srgan'? true: false}>SRGan</Nav.Link>
+      <Nav.Link href={SENTI} active = {props.active == 'sa'? true: false}>Sentiment Analysis</Nav.Link>
       
     </Nav>
     

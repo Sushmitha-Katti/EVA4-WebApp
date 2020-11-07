@@ -10,7 +10,8 @@ const HUMAN_POSE_ESTIMATION = './hpe.html'
 const FACE_SWAP = './face_swap.html'
 const VAE = './vae.html'
 const SRGAN = './srgan.html'
-const SENTI = './sentimenatal_analysis.html'
+const SENTI = './sentimental_analysis.html'
+const TRANSLATOR = './translator.html'
 
 import {
   Navbar,
@@ -60,6 +61,7 @@ const CustomNavbar = (props) => (
       <Nav.Link href={VAE} active = {props.active == 'vae'? true: false}>VAE</Nav.Link>
       <Nav.Link href={SRGAN} active = {props.active == 'srgan'? true: false}>SRGan</Nav.Link>
       <Nav.Link href={SENTI} active = {props.active == 'sa'? true: false}>Sentiment Analysis</Nav.Link>
+      <Nav.Link href={TRANSLATOR} active = {props.active == 'translator'? true: false}>Translator</Nav.Link>
       
     </Nav>
     

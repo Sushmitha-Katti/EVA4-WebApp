@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import axios from 'axios';
-import {SENTIMENTAL_ANALYSIS_ENDPOINT } from "../api_endpoints";
+import {TRANSLATOR_ENDPOINT } from "../api_endpoints";
 import {
     Container,
     Form,
@@ -13,10 +13,10 @@ import {
     Image,
     Alert
 } from "react-bootstrap";
-const Sentiment = () => {
+const Translator = () => {
 
     axios.defaults.headers.post["Content-Type"] = "multipart/form-data";
-   
+    axios.defaults.headers.post["Accept"] = "application/json";
     
   
  
@@ -39,9 +39,9 @@ const Sentiment = () => {
  
              // request recognisation from end-point
              const results = await axios.post(
-                 `${SENTIMENTAL_ANALYSIS_ENDPOINT}`,
+                 `${TRANSLATOR_ENDPOINT}`,
                  {
-                     'data' : text
+                     'data' : text.toLocaleLowerCase()
                  },
                  
                  {
@@ -80,10 +80,10 @@ const Sentiment = () => {
       
          <Container>
    
-         <h1 style = {{textAlign:"center"}}>Sentimental Anaysis</h1>
+         <h1 style = {{textAlign:"center"}}>German to English Translator</h1>
          <br/>
          <div style = {{textAlign:'center'}} >
-               <p><strong>This is a sentiment analysis model trained on the IMDb reviews dataset. The model can predict whether a given movie review is positive or negative.</strong></p>
+               <p><strong>Translator model translates German text to English. This is the basic model which may not give the 100% result </strong></p>
               
          </div>
          <br/>
@@ -114,9 +114,10 @@ const Sentiment = () => {
                          <Form.Group as={Row}>
                              <Form.Label>
                                  <h5>
-                                     <strong>Enter Movie Review</strong>
+                                     <strong>Enter German text to translate</strong>
                                  </h5>
-                                 <p style = {{fontSize: 'small'}}>(It should be atleast 5 letter word)</p>
+                                 <p style = {{fontSize: 'small'}}>(Model gives better predictions if there are no punctuations in the text)</p>
+                                
                              </Form.Label>
                              <Form.Control type="text" onChange = {onText} />
  
@@ -131,9 +132,9 @@ const Sentiment = () => {
                          className="mx-auto shadow-lg"
                          size="lg"
                          onClick={() => recognise()}
-                         disabled={text.length < 6 }
+                         disabled={text.length < 2 }
                      >
-                         Predict Sentiment!
+                         Translate!
                      </Button>
                  </Row>
                  <br/>
@@ -142,7 +143,7 @@ const Sentiment = () => {
                   
                          {!(Object.entries(results).length === 0 && results.constructor === Object) && (
                          
-                         <Alert style = {{textAlign:"center"}}  variant='dark'>{results['Status']==0 ? <strong>{results['Message']}</strong> : <strong>Sentiment of the review is  <strong style = {{ color  : results['data'] > 0.6 ? 'green' : results['data'] < 0.4 ? 'red' : 'orange' }}>{results['data'] > 0.6 ? 'Positive' : results['data'] < 0.4 ? 'Negative' : 'Neutral'}</strong></strong>}</Alert>
+                         <Alert style = {{textAlign:"center"}}  variant='dark'>{results['Status']==0 ? <strong>{results['Message']}</strong> : <strong>{results['data']}</strong>}</Alert>
                          )}
                      </Col>
            </Row>
@@ -165,4 +166,4 @@ const Sentiment = () => {
 
 }
     
-  export default Sentiment
+  export default Translator

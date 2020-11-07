@@ -7,5 +7,6 @@ export const MODELS =[
 {title : 'Face Swap Model', url : './face_swap.html', code : 'https://github.com/SVGS-EVA4/Phase2/tree/master/S3-Face_Recognition_Part_1'}, 
 {title : 'Variational AutoEncoders Model' , url : './vae.html' , code : "https://github.com/SVGS-EVA4/Phase2/tree/master/S7-Variational_AutoEncoders"},
 {title :'Super Resolution GAN Model',  url :  './srgan.html', code : "https://github.com/SVGS-EVA4/Phase2/tree/master/S8-Image_Super-Resolution_and_Neural_Style_Transfer"},
-{title : 'Sentiment Analysis Model', url : './sentimenatal_analysis.html', code : 'https://github.com/SVGS-EVA4/Phase2/tree/master/S9-Neural%20Embedding'}
+{title : 'Sentiment Analysis Model', url : './sentimental_analysis.html', code : 'https://github.com/SVGS-EVA4/Phase2/tree/master/S9-Neural%20Embedding'},
+{title : 'German To English Translator Model', url : './translator.html', code : 'https://github.com/SVGS-EVA4/Phase2/tree/master/S11-GRU%2C_Attention_Mechanism_%26_Transformers'}
 ]
